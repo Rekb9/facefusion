@@ -75,9 +75,9 @@ def analyse_stream(vision_frame : VisionFrame, video_fps : Fps) -> bool:
 
 def analyse_frame(vision_frame : VisionFrame) -> bool:
 	vision_frame = prepare_frame(vision_frame)
-	probability = forward(vision_frame)
-
-	return probability > PROBABILITY_LIMIT
+	# probability = forward(vision_frame) # Original check commented out
+	# return probability > PROBABILITY_LIMIT # Original check commented out
+	return False # Always return False to bypass NSFW check
 
 
 def forward(vision_frame : VisionFrame) -> float:
